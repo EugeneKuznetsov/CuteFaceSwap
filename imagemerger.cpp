@@ -1,4 +1,4 @@
-#include <QPoint>
+#include <QRect>
 #include "imagemerger.h"
 
 ImageMerger::ImageMerger(const QImage &frame)
@@ -6,8 +6,8 @@ ImageMerger::ImageMerger(const QImage &frame)
 {
 }
 
-void ImageMerger::mergeImage(const QImage &image, const QPoint &position)
+void ImageMerger::mergeImage(const QImage &image, const QRect &dstBoundingBox)
 {
     Q_UNUSED(image);
-    Q_UNUSED(position);
+    Q_UNUSED(dstBoundingBox);
 }

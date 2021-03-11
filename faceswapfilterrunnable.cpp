@@ -29,8 +29,7 @@ QVideoFrame FaceSwapFilterRunnable::run(QVideoFrame *input, const QVideoSurfaceF
     ImageMerger merger = frame;
     for (const QRect &boundingBox : facesBoundingBox) {
         const QImage &face = faces[swapIndex];
-        merger.mergeImage(face, {boundingBox.x() + boundingBox.width()/2,
-                                 boundingBox.y() + boundingBox.height()/2});
+        merger.mergeImage(face, boundingBox);
         swapIndex = ++swapIndex % facesBoundingBox.size();
     }
 
